@@ -32,31 +32,31 @@ class Distance:
         if isinstance(other, (int, float)):
             return Distance(round((self.km / other), 2))
 
-    def __lt__(self, other: Union["Distance", int, float]) -> "Distance":
+    def __lt__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, (int, float)):
             return self.km < other
         elif isinstance(other, Distance):
             return self.km < other.km
 
-    def __gt__(self, other: Union["Distance", int, float]) -> "Distance":
+    def __gt__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, (int, float)):
             return self.km > other
         elif isinstance(other, Distance):
             return self.km > other.km
 
-    def __eq__(self, other: Union["Distance", int, float]) -> "Distance":
+    def __eq__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, (int, float)):
             return self.km == other
         elif isinstance(other, Distance):
             return self.km == other.km
 
-    def __le__(self, other: Union["Distance", int, float]) -> "Distance":
+    def __le__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, (int, float)):
             return self.km <= other
         elif isinstance(other, Distance):
             return self.km <= other.km
 
-    def __ge__(self, other: Union["Distance", int, float]) -> "Distance":
+    def __ge__(self, other: Union["Distance", int, float]) -> bool:
         if isinstance(other, (int, float)):
             return self.km >= other
         elif isinstance(other, Distance):
